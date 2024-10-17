@@ -14,9 +14,16 @@
                         name="name"
                         type="text"
                         placeholder="Your name"
-                        class="bg-slate-900 w-full p-4 rounded-lg focus:outline-none @error('name') border-red-500 @enderror"
+                        class="bg-slate-900 w-full border border-2 p-4 rounded-lg focus:outline-none @error('name') border-red-500 @else border-slate-600 @enderror"
                         value="{{ old('name') }}"
                     >
+
+                    @error('name')
+                        <div class="text-red-500 mt-2 text-sm">
+                            {{ $message }}
+                        </div>
+                    @enderror
+
                 </div>
 
                 <div class="mb-4">
@@ -26,9 +33,17 @@
                         name="email"
                         type="text"
                         placeholder="Your email address"
-                        class="bg-slate-900 w-full p-4 rounded-lg focus:outline-none @error('name') border-red-500 @enderror"
+                        class="bg-slate-900 w-full border border-2 p-4 rounded-lg focus:outline-none @error('email') border-red-500 @else border-slate-600 @enderror"
+
                         value="{{ old('email') }}"
                     >
+
+                    @error('email')
+                        <div class="text-red-500 mt-2 text-sm">
+                            {{ $message }}
+                        </div>
+                    @enderror
+
                 </div>
 
                 <div class="mb-4">
@@ -38,9 +53,17 @@
                         name="password"
                         type="password"
                         placeholder="Password"
-                        class="bg-slate-900 w-full p-4 rounded-lg focus:outline-none @error('name') border-red-500 @enderror"
+                        class="bg-slate-900 w-full border border-2 p-4 rounded-lg focus:outline-none @error('password') border-red-500 @else border-slate-600 @enderror"
+
                         value="{{ old('password') }}"
                     >
+
+                    @error('password')
+                        <div class="text-red-500 mt-2 text-sm">
+                            {{ $message }}
+                        </div>
+                    @enderror
+
                 </div>
 
                 <div class="mb-4">
@@ -50,7 +73,8 @@
                         name="password_confirmation"
                         type="password"
                         placeholder="Password again"
-                        class="bg-slate-900 w-full p-4 rounded-lg focus:outline-none @error('name') border-red-500 @enderror"
+                        class="bg-slate-900 w-full border border-2 p-4 rounded-lg focus:outline-none @error('password') border-red-500 @else border-slate-600 @enderror"
+
                         value="{{ old('password') }}"
                     >
                 </div>
