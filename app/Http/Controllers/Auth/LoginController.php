@@ -10,7 +10,7 @@ class LoginController extends Controller
     public function index()
     {
         if (auth()->guard()->check()) {
-            return redirect()->intended('dashboard');
+            return redirect()->route('dashboard');
         } else {
             return view('auth.login');
         }
@@ -27,7 +27,7 @@ class LoginController extends Controller
             return back()->with('status', 'Invalid login details');
         }
 
-        return redirect()->route('dashboard');
+        return redirect()->intended();
 
     }
 }
