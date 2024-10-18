@@ -54,6 +54,13 @@
                 </div>
 
                 <div class="mb-4">
+                    <div class="flex items-center">
+                        <input type="checkbox" name="remember" id="remember" class="mr-2 w-4 h-4 text-blue-600  border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 bg-gray-700 dark:border-gray-600">
+                        <label for="remember">Remember Me</label>
+                    </div>
+                </div>
+
+                <div class="mb-4">
                     <button
                         type="submit"
                         class="bg-blue-700 w-full font-medium p-4 rounded-lg text-slate-300 hover:bg-blue-600"
