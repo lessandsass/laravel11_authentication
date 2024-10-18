@@ -18,18 +18,21 @@
         </ul>
 
         <ul class="flex items-center">
-            <li>
-                <a href="" class="p-3">Login</a>
-            </li>
-            <li>
-                <a href="{{ route('register') }}" class="p-3">Register</a>
-            </li>
-            <li>
-                <a href="#" class="p-3">Vipurthanan</a>
-            </li>
-            <li>
-                <a href="#" class="p-3">Logout</a>
-            </li>
+            @if (auth()->check())
+                <li>
+                    <a href="#" class="p-3">{{ auth()->user()->name }}</a>
+                </li>
+                <li>
+                    <a href="#" class="p-3">Logout</a>
+                </li>
+            @else
+                <li>
+                    <a href="" class="p-3">Login</a>
+                </li>
+                <li>
+                    <a href="{{ route('register') }}" class="p-3">Register</a>
+                </li>
+            @endif
         </ul>
     </nav>
 
