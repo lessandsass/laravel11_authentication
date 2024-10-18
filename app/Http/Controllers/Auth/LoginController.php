@@ -9,7 +9,11 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view('auth.login');
+        if (auth()->guard()->check()) {
+            return redirect()->intended('dashboard');
+        } else {
+            return view('auth.login');
+        }
     }
 
     public function store(Request $request)

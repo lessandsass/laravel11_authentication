@@ -11,7 +11,11 @@ class RegisterController extends Controller
 {
     public function index()
     {
-        return view('auth.register');
+        if (auth()->guard()->check()) {
+            return redirect()->intended('dashboard');
+        } else {
+            return view('auth.register');
+        }
     }
 
     public function store(Request $request)
