@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class LoginController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
+
     public function index()
     {
-        if (auth()->guard()->check()) {
-            return redirect()->route('dashboard');
-        } else {
-            return view('auth.login');
-        }
+        return view('auth.login');
     }
 
     public function store(Request $request)
@@ -23,7 +25,7 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
-        if (!auth()->attempt($request->only('email', 'password'), $request->remember)) {
+        if (!auth()->guard('web')->attempt($request->only('email', 'password'), $request->remember)) {
             return back()->with('status', 'Invalid login details');
         }
 

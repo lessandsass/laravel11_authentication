@@ -11,9 +11,17 @@
 
     <nav class="p-6 bg-gray-800 text-gray-300 flex justify-between">
         <ul class="flex items-center">
-            <li><a href="{{ route('home') }}" class="p-3">Home</a></li>
+
             <li>
-                <a href="{{ route('dashboard') }}" class="p-3">Dashboard</a>
+                <a href="{{ route('home') }}" class="p-3">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ route('dashboard') }}" class="p-3">
+                    Dashboard
+                </a>
             </li>
         </ul>
 
